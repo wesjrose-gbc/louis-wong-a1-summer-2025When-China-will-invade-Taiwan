@@ -7,6 +7,124 @@ body {
   ::-webkit-scrollbar {
     width: 8px;
   }
+
+  /* Custom CSS for styles.css */
+
+/* Font import (already in HTML, but good to note) */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Header Navigation (Calculator link) */
+/* Assuming the 'Calculator' class is for the nav link in the header */
+header nav {
+  background-color: #374151; /* A darker gray, similar to gray-700 */
+  padding: 0.75rem 0; /* py-3 equivalent */
+  text-align: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); /* shadow-lg */
+}
+
+header nav a.Calculator {
+  color: #ffffff; /* text-white */
+  text-decoration: none;
+  font-weight: 600; /* font-semibold */
+  padding: 0.5rem 1rem; /* px-4 py-2 equivalent */
+  border-radius: 0.375rem; /* rounded-md */
+  transition: background-color 0.15s ease-in-out;
+}
+
+header nav a.Calculator:hover {
+  background-color: #4b5563; /* A slightly lighter gray for hover */
+}
+
+
+/* Tab Buttons */
+.tab-button {
+  background-color: #e5e7eb; /* bg-gray-200 */
+  color: #4b5563; /* text-gray-700 */
+  padding: 0.75rem 1.5rem; /* py-3 px-6 */
+  border-radius: 0.5rem; /* rounded-lg */
+  font-weight: 500; /* font-medium */
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  border: none;
+  outline: none;
+  flex-shrink: 0; /* Prevent shrinking in flex container */
+}
+
+.tab-button:hover {
+  background-color: #d1d5db; /* bg-gray-300 */
+}
+
+.tab-button.active {
+  background-color: #2563eb; /* bg-blue-600 */
+  color: #ffffff; /* text-white */
+  font-weight: 600; /* font-semibold */
+}
+
+/* Tab Content */
+.tab-content {
+  display: none; /* Hidden by default */
+}
+
+.tab-content.active {
+  display: block; /* Show active tab content */
+}
+
+/* Tooltip styles */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: help; /* Indicate it's interactive */
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.85); /* Dark background */
+  color: #fff;
+  text-align: center;
+  border-radius: 0.375rem; /* rounded-md */
+  padding: 0.5rem 0.75rem; /* py-2 px-3 */
+  position: absolute;
+  z-index: 10; /* Ensure it's above other content */
+  bottom: 125%; /* Position above the element */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  white-space: normal; /* Allow text to wrap */
+  min-width: 200px;
+  max-width: 300px; /* Constrain width for readability */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.85) transparent transparent transparent; /* Arrow pointing up */
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Chart container dimensions */
+/* These are used with inline styles and might also have default in CSS */
+.chart-container {
+  position: relative;
+  margin: auto; /* Center the chart */
+}
+
+/* The `accent-blue-600` for the range input is a Tailwind class.
+ For older browsers or if Tailwind isn't fully supported,
+ you might need specific styling for input[type="range"] thumbs/tracks.
+ However, with Tailwind, this is usually handled. */
   
   ::-webkit-scrollbar-track {
     background: #f1f1f1;
@@ -141,3 +259,5 @@ body {
   .tab-content.active {
     display: block;
   }
+
+  

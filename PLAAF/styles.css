@@ -1,0 +1,209 @@
+body {
+    font-family: 'Inter', sans-serif; /* Using Inter for a modern look */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6; /* Light background */
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #2c3e50; /* Dark blue header */
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.8em;
+    letter-spacing: 1px;
+}
+
+header p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px; /* Max width for content */
+    margin: 0 auto; /* Center the main content */
+}
+
+section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Softer shadow */
+}
+
+h2 {
+    color: #3498db; /* Blue headings */
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+/* Filter and Overview Section Styling */
+.controls {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 15px;
+    margin-bottom: 20px;
+    align-items: flex-end; /* Align items at the bottom */
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.controls select,
+.controls button {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+.controls select:focus,
+.controls button:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.controls button {
+    background-color: #28a745; /* Green button */
+    color: white;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.controls button:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.overview-summary {
+    background-color: #e8f6f3; /* Light green-blue for overview */
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #d4edda;
+}
+
+.overview-summary h3 {
+    color: #28a745; /* Green for overview heading */
+    margin-top: 0;
+    border-bottom: 1px dashed #28a745;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+#type-overview p {
+    margin: 5px 0;
+    color: #444;
+}
+
+/* Jet List and Card Styling */
+.jet-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted min-width for more cards per row */
+    gap: 25px; /* Increased gap */
+}
+
+.jet-card {
+    background-color: #ecf0f1; /* Light gray card background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.jet-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.jet-silhouette {
+    width: 180px; /* Slightly larger silhouette area */
+    height: 120px; /* Fixed height for consistency */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    background-color: #dbe4e6; /* Light background for silhouette area */
+    border-radius: 8px;
+    overflow: hidden; /* Ensure images don't overflow */
+}
+
+.jet-silhouette img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Ensure the whole image is visible */
+    display: block;
+    border-radius: 4px;
+}
+
+.jet-details {
+    flex-grow: 1;
+    width: 100%; /* Ensure details take full width */
+}
+
+.jet-details h3 {
+    margin-top: 0;
+    color: #2c3e50;
+    font-size: 1.4em;
+    margin-bottom: 8px;
+}
+
+.jet-details p {
+    margin-bottom: 4px;
+    color: #555;
+    font-size: 0.95em;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #2c3e50;
+    color: white;
+    margin-top: 30px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .jet-list {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}

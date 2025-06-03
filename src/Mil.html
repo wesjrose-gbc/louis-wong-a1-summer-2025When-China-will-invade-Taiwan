@@ -8,10 +8,22 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles2.css">
 </head>
-<body class="min-h-screen flex items-center justify-center">
-  <div id="root"></div>
-  <script type="text/babel" src="script.js"></script>
+<body class="min-h-screen flex flex-col"> <header class="bg-gray-800 text-white shadow-lg">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
+            <h1 class="text-3xl sm:text-4xl font-bold">Taiwan Strait Conflict Simulator</h1>
+            <p class="mt-2 text-gray-300 text-sm sm:text-base">Explore geopolitical dynamics and military factors (Updated: May 2025)</p>
+        </div>
+        <nav>
+            | <a href="/public/index.html" class="Calculator">General Trend Calculator</a> |
+            <a href="/src/Mil.html" class="Calculator">China Prepration Calculator</a> |
+            <a href="/PLAAF/index.html" class="Calculator">PLAAF Prepration</a> |
+        </nav>
+    </header>
+
+    <div id="root" class="flex-grow flex items-center justify-center"></div> <script type="text/babel" src="script.js"></script>
 </body>
 </html>
