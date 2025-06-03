@@ -4,74 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PLA Jet Modernization</title>
-    <link rel="stylesheet" href="./styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    </head>
-<body>
-    <header>
+</head>
+<body class="text-gray-800 font-inter leading-relaxed bg-gray-50">
+    <header class="bg-gray-800 text-white shadow-lg">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
-            <h1>PLA Jet Modernization</h1>
-            <p>Visualizing the aircraft of the People's Liberation Army Navy and Air Force.</p>
+            <h1 class="text-3xl sm:text-4xl font-bold">PLA Jet Modernization</h1>
+            <p class="mt-2 text-gray-300 text-sm sm:text-base">Visualizing the aircraft of the People's Liberation Army Navy and Air Force. (Updated: May 2025)</p>
         </div>
-        <nav class="header-nav"> <a href="/public/index.html">General Trend Calculator</a>
-            <a href="/src/Mil.html">China Preparation Calculator</a>
-            <a href="/PLAAF/index.html">PLAAF Preparation</a>
+        <nav class="bg-gray-700 py-3 flex flex-wrap justify-center space-x-4 text-lg">
+            <a href="/public/index.html" class="text-white hover:text-blue-300 transition duration-300 ease-in-out px-2 py-1 rounded-md">General Trend Calculator</a>
+            <span class="text-gray-400">|</span>
+            <a href="/src/Mil.html" class="text-white hover:text-blue-300 transition duration-300 ease-in-out px-2 py-1 rounded-md">China Preparation Calculator</a>
+            <span class="text-gray-400">|</span>
+            <a href="/PLAAF/index.html" class="text-white hover:text-blue-300 transition duration-300 ease-in-out px-2 py-1 rounded-md">PLAAF Preparation</a>
         </nav>
     </header>
 
-    <main>
-        <section id="filters-overview">
-            <h2>Data Filters & Overview</h2>
-            <div class="controls">
-                <div class="filter-group">
-                    <label for="year-filter">Filter by Year:</label>
-                    <select id="year-filter">
+    <main class="p-5 max-w-6xl mx-auto">
+        <section id="filters-overview" class="bg-white p-6 mb-6 rounded-xl shadow-md">
+            <h2 class="text-blue-600 border-b-2 border-blue-600 pb-3 mb-5 text-2xl font-semibold">Data Filters & Overview</h2>
+            <div class="flex flex-wrap gap-4 mb-5 items-end">
+                <div class="flex flex-col">
+                    <label for="year-filter" class="font-semibold mb-1 text-gray-700">Filter by Year:</label>
+                    <select id="year-filter" class="p-2 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 bg-gray-50 transition duration-300 ease-in-out">
                         <option value="all">All Years</option>
                         <option value="2023">2023</option>
                         <option value="2024" selected>2024</option>
                     </select>
                 </div>
-                <div class="filter-group">
-                    <label for="type-filter">Filter by Aircraft Type:</label>
-                    <select id="type-filter">
+                <div class="flex flex-col">
+                    <label for="type-filter" class="font-semibold mb-1 text-gray-700">Filter by Aircraft Type:</label>
+                    <select id="type-filter" class="p-2 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 bg-gray-50 transition duration-300 ease-in-out">
                         <option value="all">All Types</option>
                     </select>
                 </div>
-                <div class="filter-group">
-                    <label for="service-filter">Filter by Service:</label>
-                    <select id="service-filter">
+                <div class="flex flex-col">
+                    <label for="service-filter" class="font-semibold mb-1 text-gray-700">Filter by Service:</label>
+                    <select id="service-filter" class="p-2 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 bg-gray-50 transition duration-300 ease-in-out">
                         <option value="all">All Services</option>
                         <option value="navy">PLA Navy</option>
                         <option value="airforce">PLA Air Force</option>
                     </select>
                 </div>
-                <button id="apply-filters">Apply Filters</button>
+                <button id="apply-filters" class="px-4 py-2 bg-green-600 text-white rounded-lg text-base cursor-pointer border-none shadow-md hover:bg-green-700 transform hover:-translate-y-0.5 transition duration-300 ease-in-out">Apply Filters</button>
             </div>
 
-            <div class="overview-summary">
-                <h3>Aircraft Type Overview (Filtered)</h3>
+            <div class="bg-emerald-50 p-5 rounded-lg border border-emerald-200">
+                <h3 class="text-green-700 font-semibold mb-4 border-b border-dashed border-green-700 pb-2">Aircraft Type Overview (Filtered)</h3>
                 <div id="type-overview">
-                    <p>Select filters and click "Apply Filters" to see the overview.</p>
+                    <p class="text-gray-700 text-sm">Select filters and click "Apply Filters" to see the overview.</p>
                 </div>
             </div>
         </section>
 
-        <section id="navy-jets">
-            <h2>PLA Navy Aircraft</h2>
-            <div class="jet-list" id="navy-jet-list">
+        <section id="navy-jets" class="bg-white p-6 mb-6 rounded-xl shadow-md">
+            <h2 class="text-blue-600 border-b-2 border-blue-600 pb-3 mb-5 text-2xl font-semibold">PLA Navy Aircraft</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="navy-jet-list">
                 </div>
         </section>
 
-        <section id="airforce-jets">
-            <h2>PLA Air Force Aircraft</h2>
-            <div class="jet-list" id="airforce-jet-list">
+        <section id="airforce-jets" class="bg-white p-6 mb-6 rounded-xl shadow-md">
+            <h2 class="text-blue-600 border-b-2 border-blue-600 pb-3 mb-5 text-2xl font-semibold">PLA Air Force Aircraft</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="airforce-jet-list">
                 </div>
         </section>
     </main>
 
-    <footer>
+    <footer class="text-center p-4 bg-gray-800 text-white mt-8 rounded-t-xl">
         <p>&copy; 2025 PLA Modernization Progress</p>
     </footer>
 
-    <script src="./script.js"></script> </body>
+    <script src="./scrpit.js"></script>
+</body>
 </html>
