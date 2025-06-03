@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taiwan Strait Conflict Simulator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="text-gray-800">
+    <header class="bg-gray-800 text-white shadow-lg">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
+            <h1 class="text-3xl sm:text-4xl font-bold">Taiwan Strait Conflict Simulator</h1>
+            <p class="mt-2 text-gray-300 text-sm sm:text-base">Explore geopolitical dynamics and military factors (Updated: May 2025)</p>
+        </div>
+        <nav>
+            <a href=""
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="mb-6 flex flex-wrap justify-center space-x-2 sm:space-x-4">
+            <button class="tab-button active" onclick="openTab(event, 'simulatorTab')">Simulator Controls</button>
+            <button class="tab-button" onclick="openTab(event, 'explanationTab')">Explanation</button>
+        </div>
+
+        <div id="simulatorTab" class="tab-content active">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-xl">
+                    <h2 class="text-2xl font-semibold mb-6 text-gray-700 border-b pb-3">Input Factors</h2>
+                    <p class="text-sm text-gray-500 mb-6">Adjust sliders to reflect different scenarios. Defaults represent example values for early 2025 to 2027 scenarios.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="slider-group">
+                            <label for="prcMilitaryReadiness" class="block text-sm font-medium text-gray-700 mb-1">
+                                China's Military Readiness and Capability
+                                <span class="tooltip">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 inline-block ml-1 text-gray-400 cursor-help">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+                                    </svg>
+                                    <span class="tooltiptext">Reflects the PLA's operational readiness, technological advancements, joint operational capabilities, and logistical strength.</span>
+                                </span>
+                            </label>
+                            <div class="flex items-center space-x-3">
+                                <input type="range" id="prcMilitaryReadiness" min="1" max="10" value="7" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
+                                <span id="prcMilitaryReadinessValue" class="text-sm font-semibold text-blue-600 w-8 text-center">7</span>
+                            </div>
+                        </div>
+
+                        <div class="slider-group">
+                            <label for="taiwanDefenseCapability" class="block text-sm font-medium text-gray-700 mb-1">
+                                Taiwan's Defense Capability and Resilience
+                                <span class="tooltip">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 inline-block ml-1 text-gray-400 cursor-help"><path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" /></svg>
+                                    <span class="tooltiptext">Taiwan's military strength, civil defense preparedness, societal resilience, and effectiveness of asymmetric warfare strategies.</span>
+                                </span>
+                            </label>
+                            <div class="flex items-center space-x-3">
+                                <input type="range" id="taiwanDefenseCapability" min="1" max="10" value="6" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
+                                <span id="taiwanDefenseCapabilityValue" class="text-sm font-semibold text-blue-600 w-8 text-center">6</span>
+                            </div>
+                        </div>
+
+                        <div class="slider-group">
+                            <label for="usInterventionLikelihood" class="block text-sm font-medium text-gray-700 mb-1">
+                                Perceived Likelihood and Scale of U.S. Intervention
+                                <span class="tooltip">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 inline-block ml-1 text-gray-400 cursor-help"><path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" /></svg>
+                                    <span class="tooltiptext">Beijing's assessment of the likelihood, speed, scale, and impact of U.S. military intervention.</span>
+                                </span>
+                            </label>
+                            <div class="flex items-center space-x-3">
+                                <input type="range" id="usInterventionLikelihood" min="1" max="10" value="7" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
+                                <span id="usInterventionLikelihoodValue" class="text-sm font-semibold text-blue-600 w-8 text-center">7</span>
+                            </div>
+                        </div>
+
+                        <div class="slider-group">
+                            <label for="internationalPressure" class="block text-sm font-medium text-gray-700 mb-1">
+                                Severity of International Condemnation and Sanctions
+                                <span class="tooltip">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 inline-block ml-1 text-gray-400 cursor-help"><path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" /></svg>
+                                    <span class="tooltiptext">Expected global diplomatic backlash, economic sanctions, and international isolation.</span>
+                                </span>
+                            </label>
+                            <div class="flex items-center space-x-3">
+                                <input type="range" id="internationalPressure" min="1" max="10" value="6" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
+                                <span id="internationalPressureValue" class="text-sm font-semibold text-blue-600 w-8 text-center">6</span>
+                            </div>
+                        </div>
+
+                        <div class="slider-group">
+                            <label for="prcEconomicStability" class="block text-sm font-medium text-gray-700 mb-1">
+                                China's Domestic Economic and Political Stability
+                                <span class="tooltip">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 inline-block ml-1 text-gray-400 cursor-help"><path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" /></svg>
+                                    <span class="tooltiptext">The CCP's confidence in managing domestic economic consequences and maintaining political control during a prolonged crisis.</span>
+                                </span>
+                            </label>
+                            <div class="flex items-center space-x-3">
+                                <input type="range" id="prcEconomicStability" min="1" max="10" value="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
+                                <span id="prcEconomicStabilityValue" class="text-sm font-semibold text-blue-600 w-8 text-center">5</span>
+                            </div>
+                        </div>
+                        
+                        <div class="slider-group">
+                            <label for="leadershipRiskTolerance" class="block text-sm font-medium text-gray-700 mb-1">
+                                Chinese Leadership's Risk Tolerance and Resolve
+                                <span class="tooltip">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 inline-block ml-1 text-gray-400 cursor-help"><path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" /></svg>
+                                    <span class="tooltiptext">The willingness of Xi Jinping and CCP leadership to accept high risks and potential negative consequences to achieve unification goals.</span>
+                                </span>
+                            </label>
+                            <div class="flex items-center space-x-3">
+                                <input type="range" id="leadershipRiskTolerance" min="1" max="10" value="7" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
+                                <span id="leadershipRiskToleranceValue" class="text-sm font-semibold text-blue-600 w-8 text-center">7</span>
+                            </div>
+                        </div>
+
+                        <div class="slider-group">
+                            <label for="informationWarfareEffectiveness" class="block text-sm font-medium text-gray-700 mb-1">
+                                China's Information Warfare and Deception
+                                <span class="tooltip">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 inline-block ml-1 text-gray-400 cursor-help"><path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" /></svg>
+                                    <span class="tooltiptext">China's effectiveness in shaping global narratives, creating confusion, undermining international resolve, and achieving strategic surprise.</span>
+                                </span>
+                            </label>
+                            <div class="flex items-center space-x-3">
+                                <input type="range" id="informationWarfareEffectiveness" min="1" max="10" value="6" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
+                                <span id="informationWarfareEffectivenessValue" class="text-sm font-semibold text-blue-600 w-8 text-center">6</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-xl flex flex-col items-center">
+                    <h2 class="text-2xl font-semibold mb-6 text-gray-700 border-b pb-3 w-full text-center">Conflict Likelihood</h2>
+                    <div class="chart-container mb-6" style="height: 280px; width: 280px;">
+                        <canvas id="likelihoodGaugeChart"></canvas>
+                    </div>
+                    <div id="likelihoodScoreDisplay" class="text-4xl font-bold text-gray-800 mb-2">--</div>
+                    <div id="likelihoodTextDisplay" class="text-lg text-gray-600 font-medium mb-6 text-center">Adjust sliders and run simulation.</div>
+                    <button onclick="runSimulation()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                        Run Simulation
+                    </button>
+                    <button onclick="resetSliders()" class="mt-4 w-full bg-gray-500 hover:bg-gray-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50">
+                        Reset Sliders
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="visualizationsTab" class="tab-content">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
+                <div class="bg-white p-6 rounded-xl shadow-xl">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-700 text-center">Military Balance: Air Forces</h3>
+                    <p class="text-xs text-gray-500 mb-4 text-center">Example estimates based on open-source information (e.g., U.S. DoD reports). Focuses on assets relevant to a Taiwan scenario (China's Eastern/Southern Theater Commands).</p>
+                    <div class="chart-container" style="height: 350px;">
+                        <canvas id="militaryBalanceAirChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-xl">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-700 text-center">Military Balance: Missile Forces (Illustrative)</h3>
+                    <p class="text-xs text-gray-500 mb-4 text-center">Focuses on conventional short-range (SRBM) and medium-range (MRBM) missiles relevant to a Taiwan contingency. Data is highly illustrative.</p>
+                    <div class="chart-container" style="height: 350px;">
+                        <canvas id="militaryBalanceMissileChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-xl lg:col-span-2">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-700 text-center">Impact of Conflict Likelihood Factors</h3>
+                    <p class="text-xs text-gray-500 mb-4 text-center">Visualizes the contribution of each input factor (standardized) to the current likelihood score. Higher values indicate stronger influence of the factor's current setting on conflict likelihood.</p>
+                    <div class="chart-container" style="max-width: 600px; height: 400px;">
+                        <canvas id="factorInfluenceChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="explanationTab" class="tab-content">
+            <div class="bg-white p-6 sm:p-8 rounded-xl shadow-xl mt-8">
+                <h2 class="text-2xl font-semibold mb-6 text-gray-700 border-b pb-3">Understanding the Simulator</h2>
+                
+                <div class="space-y-6 text-gray-600">
+                    <section>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-700">Purpose and Fit</h3>
+                        <p>This interactive tool is designed for educational purposes, exploring the multifaceted dynamics that could influence Xi Jinping and Chinese leadership's decision-making regarding military action in the Taiwan Strait. It is a simplified model, not predictive of real-world events, but aims to highlight the interplay of various key factors.</p>
+                    </section>
+
+                    <section>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-700">Key Input Factors Explained</h3>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li><strong>China's Military Readiness and Capability:</strong> Considers the PLA's overall strength, technological edge, joint operational skills, and logistical capacity to execute complex campaigns.</li>
+                            <li><strong>Taiwan's Defense Capability and Resilience:</strong> Covers Taiwan's military strength, civil defense preparedness, societal cohesion, and effectiveness of asymmetric strategies against a larger adversary.</li>
+                            <li><strong>Perceived Likelihood and Scale of U.S. Intervention:</strong> Reflects Beijing's calculations of the likelihood, speed, scale, and impact of a U.S. military response.</li>
+                            <li><strong>Severity of International Condemnation and Sanctions:</strong> The expected global diplomatic backlash, economic sanctions, and political isolation China might face.</li>
+                            <li><strong>China's Domestic Economic and Political Stability:</strong> The CCP's assessment of its ability to absorb economic shocks from conflict and maintain domestic political order.</li>
+                            <li><strong>Chinese Leadership's Risk Tolerance and Resolve:</strong> The extent to which top leadership is willing to accept significant risks and costs to achieve unification goals, often tied to legacy or perceived strategic windows.</li>
+                            <li><strong>China's Information Warfare and Deception:</strong> Assesses China's effectiveness in shaping narratives, creating confusion, undermining international resolve, and achieving strategic surprise.</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-700">Simulation Logic (Simplified)</h3>
+                        <p>The "Conflict Likelihood" score is calculated based on a weighted combination of input factors. Each factor is assigned a weight reflecting its potential importance in decision-making calculations. Some factors act as "risk enhancers" (e.g., high Chinese readiness, high leadership risk tolerance), while others serve as "risk mitigators" or "deterrents" (e.g., high Taiwan defense, high U.S. intervention likelihood, high international pressure).</p>
+                        <p class="mt-2">The model incorporates some degree of nonlinearity and inter-factor influence. For example, extremely low U.S. intervention likelihood may significantly amplify the impact of high Chinese military readiness. The "Factor Influence Chart" attempts to visualize the directional push of each factor at its current setting.</p>
+                        <p class="mt-2"><strong>Score Interpretation:</strong></p>
+                        <ul class="list-disc list-inside space-y-1 mt-1">
+                            <li><strong>1-3 (Low):</strong> Conditions are generally unfavorable for Chinese military action; deterrence and risks likely outweigh perceived benefits.</li>
+                            <li><strong>4-6 (Moderate):</strong> A complex and uncertain situation. Some factors may favor action, but significant risks and counterpressures lead to hesitation or preference for non-military coercion.</li>
+                            <li><strong>7-8 (High):</strong> Conditions increasingly tilt toward scenarios where Chinese leadership may more seriously consider military options, though significant risks remain.</li>
+                            <li><strong>9-10 (Very High):</strong> A crisis point where the balance of factors strongly suggests Chinese leadership might opt for military action, perceiving benefits to outweigh substantial risks.</li>
+                        </ul>
+                    </section>
+                    
+                    <section>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-700">Military Balance Data</h3>
+                        <p>Military balance charts are based on open-source information, such as the U.S. Department of Defense's annual reports on Chinese military power. These figures are estimates intended to provide a general sense of scale. For China, data typically focuses on theater-relevant assets for a Taiwan scenario.</p>
+                        <ul class="list-disc list-inside space-y-1 mt-1">
+                            <li><strong>Air Forces:</strong> Compares key aircraft types, such as fighters and bombers. The quality, training, and operational doctrines behind these numbers are also critical but difficult to quantify in simple charts.</li>
+                            <li><strong>Missile Forces:</strong> Focuses on conventional short-range ballistic missiles (SRBM) and medium-range ballistic missiles (MRBM) likely to be used in the early stages of a conflict. China possesses a large and diverse missile arsenal.</li>
+                        </ul>
+                        <p class="mt-2">Note: Naval balance is a critical component but is not explicitly charted here due to the complexity of representing diverse ship types and capabilities. It is implicitly included in "China's Military Readiness" and "U.S. Intervention Likelihood."</p>
+                    </section>
+
+                    <section>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-700">Disclaimer</h3>
+                        <p>This simulator is a conceptual tool for educational exploration and does not represent an official assessment or prediction by any government or organization. Geopolitical situations are highly complex, influenced by numerous factors beyond the scope of this model. Real-world decision-making involves intelligence, human factors, and unpredictable events that cannot be captured in this simulation.</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-700 text-white mt-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
+            <p class="text-sm">© 2024-2025 Geopolitical Simulator Project. For educational purposes only.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

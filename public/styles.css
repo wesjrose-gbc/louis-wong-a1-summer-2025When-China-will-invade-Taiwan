@@ -1,0 +1,119 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f3f4f6; /* Light gray background */
+}
+
+/* Custom scrollbar for better aesthetics (optional) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #3b82f6; /* Tailwind blue-500 */
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    @apply slider-thumb;
+}
+
+input[type="range"]::-moz-range-thumb {
+    @apply slider-thumb;
+}
+
+.chart-container {
+    position: relative;
+    margin: auto;
+    height: 300px; /* Default height, can be adjusted */
+    width: 100%;
+    max-width: 500px; /* Max width for larger charts */
+}
+
+.small-chart-container {
+    position: relative;
+    margin: auto;
+    height: 250px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 180px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position the tooltip above the text */
+    left: 50%;
+    margin-left: -110px; /* Use half of the width (220/2 = 110) to center the tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tab-button {
+    @apply px-4 py-2 font-medium text-sm rounded-md transition-colors duration-150;
+}
+
+.tab-button.active {
+    @apply bg-blue-600 text-white;
+}
+
+.tab-button:not(.active) {
+    @apply bg-gray-200 text-gray-700 hover:bg-gray-300;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
