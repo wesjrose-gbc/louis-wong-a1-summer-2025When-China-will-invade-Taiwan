@@ -1,178 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-H8GVLS05Y9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-H8GVLS05Y9');
-</script>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PLA Amphibious Landing Force Analysis</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-    </style>
-</head>
 
-<body class="text-gray-800 leading-relaxed bg-gray-50">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H8GVLS05Y9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-H8GVLS05Y9");
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    </style>
+  </head>
+
+  <body class="text-gray-800 leading-relaxed bg-gray-50">
     <header class="bg-gray-800 text-white shadow-lg">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
-            <h1 class="text-3xl sm:text-4xl font-bold">PLA Amphibious Landing Force Analysis</h1>
-            <p class="mt-2 text-gray-300 text-sm sm:text-base">An overview of PLA Amphibious Landing Units and Transport Capabilities. (Updated: June 2025)</p>
-        </div>
-        <nav class="bg-gray-700 py-3 flex flex-wrap justify-center space-x-4 text-lg">
-            <a href="/" class="text-white hover:text-blue-300 transition duration-300 ease-in-out px-2 py-1 rounded-md">General Trend Calculator</a>
-            <span class="text-gray-400">|</span>
-            <a href="/China Preparation/index.html" class="text-white hover:text-blue-300 transition duration-300 ease-in-out px-2 py-1 rounded-md">China Preparation Calculator</a>
-            <span class="text-gray-400">|</span>
-            <a href="/PLAAF/index.html" class="text-white hover:text-blue-300 transition duration-300 ease-in-out px-2 py-1 rounded-md">PLAAF Preparation</a>
-            <span class="text-gray-400">|</span>
-            <a href="/PLA Landing Force/index.html" class="text-white hover:text-blue-300 transition duration-300 ease-in-out px-2 py-1 rounded-md">PLA Landing Force</a>
-        </nav>
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
+        <h1 class="text-3xl sm:text-4xl font-bold">PLA Amphibious Landing Force Analysis</h1>
+        <p class="mt-2 text-gray-300 text-sm sm:text-base">
+          An overview of PLA Amphibious Landing Units and Transport Capabilities. (Updated: June 2025)
+        </p>
+      </div>
+      <nav class="bg-gray-700 py-3 flex flex-wrap justify-center space-x-4 text-lg">
+        <a href="/" class="text-white hover:text-blue-300 transition duration-300 ease-in-out px-2 py-1 rounded-md">General Trend Calculator</a>
+        <span class="text-gray-400">|</span>
+        <a href="/China Preparation/index.html" class="text-white hover:text-blue-300 transition duration-300 ease-in-out px-2 py-1 rounded-md">China Preparation Calculator</a>
+        <span class="text-gray-400">|</span>
+        <a href="/PLAAF/index.html" class="text-white hover:text-blue-300 transition duration-300 ease-in-out px-2 py-1 rounded-md">PLAAF Preparation</a>
+        <span class="text-gray-400">|</span>
+        <a href="/PLA Landing Force/index.html" class="text-white hover:text-blue-300 transition duration-300 ease-in-out px-2 py-1 rounded-md">PLA Landing Force</a>
+      </nav>
     </header>
 
     <main class="p-5 max-w-6xl mx-auto">
-        <section id="landing-force-units" class="bg-white p-6 mb-6 rounded-xl shadow-md">
-            <h2 class="text-blue-600 border-b-2 border-blue-600 pb-3 mb-5 text-2xl font-semibold">PLA Amphibious Landing Combat Units</h2>
-            <div class="overflow-x-auto">
-                <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-sm">
-                    <thead class="bg-gray-100">
-                        <tr>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Theater Command</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Army Amphibious Combined Brigades</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Marine Corps Combined Brigades</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-200">
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900" rowspan="2">Northern Theater Command</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Army 72nd Group Army, 5th Amphibious Combined Brigade</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">6th Marine Brigade</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Army 72nd Group Army, 124th Amphibious Combined Brigade</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">5th Marine Brigade</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900" rowspan="2">Eastern Theater Command</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Army 73rd Group Army, 14th Amphibious Combined Brigade</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">4th Marine Brigade</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Army 73rd Group Army, 91st Amphibious Combined Brigade</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">3rd Marine Brigade</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900" rowspan="2">Southern Theater Command</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Army 74th Group Army, 125th Amphibious Combined Brigade</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2nd Marine Brigade</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Army 74th Group Army, 1st Amphibious Combined Brigade</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">1st Marine Brigade</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <p class="text-xs text-gray-600 mt-4 px-2">
-                <strong>Data Source:</strong> References from Huang Yufen, "Construction and Development of the PLA Marine Corps After Military Reform," Naval Academic Bimonthly (Taipei), Vol. 53, No. 5, October 1, 2019, p. 61; Liu Jiahua, "Research on the Organization and Operations of Amphibious Combined Units After PLA Military Reform - Taking the Amphibious Combined Battalion as an Example," Army Academic Bimonthly (Taoyuan City), Vol. 59, No. 591, October 1, 2023, pp. 11-12. Retrieved: February 11, 2025, compiled by the author.
-            </p>
-        </section>
 
-        <section id="amphibious-vessel-capacity" class="bg-white p-6 mb-6 rounded-xl shadow-md">
-            <h2 class="text-blue-600 border-b-2 border-blue-600 pb-3 mb-5 text-2xl font-semibold">PLA Existing Regular Amphibious Combat Vessel Loading Capacity Assessment</h2>
-            <div class="overflow-x-auto">
-                <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-sm">
-                    <thead class="bg-gray-100">
-                        <tr>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Vessel Type</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Quantity</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Single Vessel Loading Capacity</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total Loading Capacity</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-200">
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Type 075 LHD</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">3</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">1 Air Assault Battalion, 1 Medium Amphibious Combined Battalion</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">1 Air Assault Brigade, 3 Medium Amphibious Combined Battalions</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Type 071 LPD</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">8</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">1 Heavy Amphibious Combined Battalion</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2 Amphibious Combined Brigades</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Type 072A LST</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">9</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">1 Tank Company / Motorized Infantry Company</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2 Combined Battalions, 1 Tank Company</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Type 072B LST</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">6</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">1 Tank Company / Motorized Infantry Company</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">1.5 Combined Battalions</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Type 072 II LST</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">3</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">1 Tank Company / Motorized Infantry Company</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">3 Tank Companies / Motorized Infantry Companies</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Type 072 III LST</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">11</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">1 Tank Company / Motorized Infantry Company</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2 Combined Battalions, 3 Tank Companies</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Type 073A LST</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">10</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">1 Motorized Infantry Company</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2 Light Combined Battalions, 2 Motorized Infantry Companies</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Type 073 III LST</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">1</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">1 Motorized Infantry Company</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">1 Motorized Infantry Company</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Type 958 LCAC</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">7</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">140 infantry & 3 Main Battle Tanks</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">980 infantry & 21 Main Battle Tanks</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <p class="text-xs text-gray-600 mt-4 px-2">
-                <strong>Note:</strong> The above vessel data is public information as of January 2025. Based on current PLA organization, only combat unit loading quantities are calculated. Small landing craft unable to load company-level units are not included in this table.
-            </p>
-            <p class="text-xs text-gray-600 mt-2 px-2">
-                <strong>Data Source:</strong> References from Conor M. Kennedy, Crossing The Strait: China’s Military Prepares for War with Taiwan (Washington D.C.: U.S. National Defense University Press, 2022), p.227; U.S. Office of Naval Intelligence, “China People’s Liberation Army Navy (PLAN), Coast Guard, and Government Maritime Forces 2022-2023 Recognition and Identification Guide,” December, 2022, p.1, compiled by the author.
-            </p>
-        </section>
+      PLA Amphibious Landing Combat Units
+
+      <section id="landing-force-units" class="bg-white p-6 mb-6 rounded-xl shadow-md">
+        <div class="overflow-x-auto">
+          <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-sm">
+            <thead class="bg-gray-100">
+              <tr>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Theater Command</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Army Amphibious Combined Brigades</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Marine Corps Combined Brigades</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900" rowspan="2">Northern Theater Command</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Army 72nd Group Army, 5th Amphibious Combined Brigade</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">6th Marine Brigade</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Army 72nd Group Army, 124th Amphibious Combined Brigade</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">5th Marine Brigade</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900" rowspan="2">Eastern Theater Command</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Army 73rd Group Army, 14th Amphibious Combined Brigade</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">4th Marine Brigade</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Army 73rd Group Army, 91st Amphibious Combined Brigade</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">3rd Marine Brigade</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900" rowspan="2">Southern Theater Command</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Army 74th Group Army, 125th Amphibious Combined Brigade</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2nd Marine Brigade</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Army 74th Group Army, 1st Amphibious Combined Brigade</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">1st Marine Brigade</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-xs text-gray-600 mt-4 px-2">
+          **Data Source:** References from Huang Yufen, "Construction and Development of the PLA Marine Corps After Military Reform," Naval Academic Bimonthly (Taipei), Vol. 53, No. 5, October 1, 2019, p. 61; Liu Jiahua, "Research on the Organization and Operations of Amphibious Combined Units After PLA Military Reform - Taking the Amphibious Combined Battalion as an Example," Army Academic Bimonthly (Taoyuan City), Vol. 59, No. 591, October 1, 2023, pp. 11-12. Retrieved: February 11, 2025, compiled by the author.
+        </p>
+      </section>
+
+      PLA Existing Regular Amphibious Combat Vessel Loading Capacity Assessment
+
+      <section id="amphibious-vessel-capacity" class="bg-white p-6 mb-6 rounded-xl shadow-md">
+        <div class="overflow-x-auto">
+          <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-sm">
+            <thead class="bg-gray-100">
+              <tr>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Vessel Type</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Quantity</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Single Vessel Loading Capacity</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total Loading Capacity</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Converted Battalion Count</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Type 075 LHD</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">3</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">1 Air Assault Battalion, 1 Medium Amphibious Combined Battalion</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">1 Air Assault Brigade, 3 Medium Amphibious Combined Battalions</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700" data-battalions="6">6 battalions (3 medium + 3 for the brigade)</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Type 071 LPD</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">8</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">1 Heavy Amphibious Combined Battalion</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2 Amphibious Combined Brigades</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700" data-battalions="12">12–16 battalions (assuming 6–8 battalions/brigade)</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Type 072A LST</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">9</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">1 Tank Company / Motorized Infantry Company</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2 Combined Battalions, 1 Tank Company</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700" data-battalions="2.33">2.33 battalions (2 + 1 company = 0.33)</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Type 072B LST</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">6</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">1 Tank Company / Motorized Infantry Company</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">1.5 Combined Battalions</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700" data-battalions="1.5">1.5 battalions</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Type 072 II LST</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">3</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">1 Tank Company / Motorized Infantry Company</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">3 Tank Companies / Motorized Infantry Companies</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700" data-battalions="1">1 battalion</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Type 072 III LST</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">11</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">1 Tank Company / Motorized Infantry Company</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2 Combined Battalions, 3 Tank Companies</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700" data-battalions="3">3 battalions (2 + 1)</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Type 073A LST</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">10</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">1 Motorized Infantry Company</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2 Light Combined Battalions, 2 Motorized Infantry Companies</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700" data-battalions="2.67">2.67 battalions (2 + 0.67)</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Type 073 III LST</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">1</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">1 Motorized Infantry Company</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">1 Motorized Infantry Company</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700" data-battalions="0.33">0.33 battalion</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Type 958 LCAC</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">7</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">140 infantry & 3 Main Battle Tanks</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">980 infantry & 21 Main Battle Tanks</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700" data-battalions="1.33">Assume ~1 infantry battalion + 1 tank company → 1.33 battalions</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-900" colspan="4">Total Converted Battalion Count</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-900" id="totalBattalionCount"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-xs text-gray-600 mt-4 px-2">
+          **Note:** The above vessel data is public information as of January 2025. Based on current PLA organization, only combat unit loading quantities are calculated. Small landing craft unable to load company-level units are not included in this table.
+        </p>
+        <p class="text-xs text-gray-600 mt-2 px-2">
+          **Data Source:** References from Conor M. Kennedy, Crossing The Strait: China’s Military Prepares for War with Taiwan (Washington D.C.: U.S. National Defense University Press, 2022), p.227; U.S. Office of Naval Intelligence, “China People’s Liberation Army Navy (PLAN), Coast Guard, and Government Maritime Forces 2022-2023 Recognition and Identification Guide,” December, 2022, p.1, compiled by the author.
+        </p>
+      </section>
     </main>
 
     <footer class="text-center p-4 bg-gray-800 text-white mt-8 rounded-t-xl">
-        <p>&copy; 2025 PLA Modernization Progress</p>
+      <p>&copy; 2025 PLA Modernization Progress</p>
     </footer>
 
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        let totalBattalions = 0;
+        document.querySelectorAll('#amphibious-vessel-capacity tbody tr td[data-battalions]').forEach(function(cell) {
+          totalBattalions += parseFloat(cell.getAttribute('data-battalions'));
+        });
+        document.getElementById('totalBattalionCount').textContent = totalBattalions.toFixed(2) + ' battalions';
+      });
+    </script>
     <script src="./script.js"></script>
-</body>
+  </body>
 </html>
