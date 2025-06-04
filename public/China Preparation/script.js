@@ -205,7 +205,7 @@ const indicators = [
             <li><strong>Source Scoring:</strong> Judge source reliability based on experience, weighting credibility comparisons.</li>
             <li><strong>Independent Verification:</strong> Always strive for independent verification and fact-checking.</li>
             <li><strong>Non-Single Indicator:</strong> Single indicators may be false positives due to deception, rumors, or misinterpretation, even with short foresight periods. Use a scoring system for overall judgment.</li>
-            <li><strong>Regional Weighting:</strong> Eastern > Southern > Central > Northern > Western theaters. Phenomena in higher-weighted theaters are more significant.</li>
+            <li><strong>Regional Weighting:</strong> Eastern - Southern - Central - Northern - Western theaters. Phenomena in higher-weighted theaters are more significant.</li>
           </ul>
         </div>
       </div>
