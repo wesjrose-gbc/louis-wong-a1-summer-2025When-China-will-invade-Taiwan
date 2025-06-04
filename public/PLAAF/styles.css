@@ -227,3 +227,9 @@ header nav {
   header nav a.Calculator:hover {
     background-color: #4b5563; /* A slightly lighter gray for hover */
   }
+
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Keeps the navbar above other content */
+  }
