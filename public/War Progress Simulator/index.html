@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H8GVLS05Y9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taiwan Invasion Simulator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> </head>
+
+<body class="text-gray-800 font-inter leading-relaxed bg-gray-50 mx-auto">
+    <header class="navbar bg-gray-800 text-white shadow-lg">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
+            <h1 class="text-3xl sm:text-4xl font-bold">Taiwan Invasion Simulator</h1>
+            <p class="mt-2 text-gray-300 text-sm sm:text-base">Based on the CSIS Wargame Report: "The First Battle of the Next War"</p>
+        </div>
+        <nav class="bg-gray-700 py-3 flex flex-wrap justify-center space-x-4 text-lg">
+            <nav class="bg-gray-700 py-3 flex flex-wrap justify-center space-x-4 text-lg">
+                <a href="/index.html" class="text-white hover:text-blue-300 transition duration-300 ease-in-out px-2 py-1 rounded-md">General Trend Calculator</a>
+                <span class="text-gray-400">|</span>
+                <a href="/public/China Preparation/index.html" class="text-white hover:text-blue-300 transition duration-300 ease-in-out px-2 py-1 rounded-md">China Preparation Calculator</a>
+                <span class="text-gray-400">|</span>
+                <a href="/public/PLAAF/index.html" class="text-white hover:text-blue-300 transition duration-300 ease-in-out px-2 py-1 rounded-md">PLAAF Preparation</a>
+                <span class="text-gray-400">|</span>
+                <a href="/public/PLA Landing Force/index.html" class="text-white hover:text-blue-300 transition duration-300 ease-in-out px-2 py-1 rounded-md">PLA Landing Force</a>
+                <span class="text-gray-400">|</span>
+                <a href="/public/War Progress Simulator/index.html" class="text-white hover:text-blue-300 transition duration-300 ease-in-out px-2 py-1 rounded-md">War Progress Simulator</a>
+            </nav>
+    </header>
+
+    <main class="p-5 max-w-6xl mx-auto">
+        <div class="simulator-container bg-white p-8 mb-6 rounded-xl shadow-md grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="input-panel flex flex-col p-6 bg-gray-50 rounded-lg shadow-inner">
+                <h2 class="text-blue-600 border-b-2 border-blue-600 pb-3 mb-5 text-2xl font-semibold">Simulator Inputs</h2>
+                <div class="form-group mb-6">
+                    <label for="battalions" class="font-semibold mb-3 text-gray-700 block text-lg">Number of PLA Battalions Landed:</label>
+                    <div class="flex items-center gap-4">
+                        <input type="range" id="battalions" min="10" max="80" value="37" class="flex-grow accent-blue-600">
+                        <span id="battalions-value" class="text-xl font-bold text-blue-600 w-12 text-center">37</span>
+                    </div>
+                </div>
+                <div class="form-group mb-6">
+                    <label for="scenario-type" class="font-semibold mb-3 text-gray-700 block text-lg">Scenario Assumptions:</label>
+                    <select id="scenario-type" class="p-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 bg-white text-gray-800 w-full transition duration-300 ease-in-out">
+                        <option value="base">Base Scenario</option>
+                        <option value="optimistic">Optimistic (Favors US/Coalition)</option>
+                        <option value="pessimistic">Pessimistic (Favors China)</option>
+                    </select>
+                </div>
+                <button id="simulate-btn" class="px-6 py-3 bg-green-600 text-white rounded-lg text-lg cursor-pointer border-none shadow-md hover:bg-green-700 transform hover:-translate-y-0.5 transition duration-300 ease-in-out">Simulate Invasion</button>
+            </div>
+
+            <div class="results-panel flex flex-col p-6 bg-gray-50 rounded-lg shadow-inner">
+                <h2 class="text-blue-600 border-b-2 border-blue-600 pb-3 mb-5 text-2xl font-semibold">Simulation Results</h2>
+                <div class="mb-4">
+                    <p class="text-gray-700 mb-2"><strong>War Outcome:</strong></p>
+                    <div id="war-outcome" class="outcome-display text-center p-3 rounded-md text-lg font-bold text-white">Awaiting Simulation...</div>
+                </div>
+
+                <div class="grid grid-cols-1 gap-4 mb-4">
+                    <div class="stat-card bg-white p-4 rounded-md shadow-sm border border-gray-200">
+                        <h3 class="text-blue-600 font-semibold mb-2">Estimated Territorial Control</h3>
+                        <p id="territory-controlled" class="text-gray-800 text-lg"></p>
+                    </div>
+                    <div class="stat-card bg-white p-4 rounded-md shadow-sm border border-gray-200">
+                        <h3 class="text-blue-600 font-semibold mb-2">Estimated PLA Personnel Ashore (after losses)</h3>
+                        <p id="pla-personnel" class="text-gray-800 text-lg"></p>
+                    </div>
+                    <div class="stat-card bg-white p-4 rounded-md shadow-sm border border-gray-200">
+                        <h3 class="text-blue-600 font-semibold mb-2">Estimated Conflict Duration</h3>
+                        <p id="conflict-duration" class="text-gray-800 text-lg"></p>
+                    </div>
+                </div>
+
+                <h3 class="text-blue-600 font-semibold mb-3 mt-4 border-b border-gray-200 pb-2">Estimated Losses</h3>
+                <table class="loss-table w-full border-collapse text-gray-700">
+                    <thead>
+                        <tr class="bg-gray-100">
+                            <th class="p-3 border border-gray-200 text-left">Force</th>
+                            <th class="p-3 border border-gray-200">Combat Aircraft Losses</th>
+                            <th class="p-3 border border-gray-200">Ship Losses</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="p-3 border border-gray-200 font-semibold">United States</td>
+                            <td id="us-aircraft-losses" class="p-3 border border-gray-200"></td>
+                            <td id="us-ship-losses" class="p-3 border border-gray-200"></td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 border border-gray-200 font-semibold">Japan</td>
+                            <td id="jp-aircraft-losses" class="p-3 border border-gray-200"></td>
+                            <td id="jp-ship-losses" class="p-3 border border-gray-200"></td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 border border-gray-200 font-semibold">China</td>
+                            <td id="cn-aircraft-losses" class="p-3 border border-gray-200"></td>
+                            <td id="cn-ship-losses" class="p-3 border border-gray-200"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center p-4 bg-gray-800 text-white mt-8 rounded-t-xl">
+        <div class="socials flex justify-center space-x-4 mb-2">
+            <a href="https://github.com/LouisWongHK/When-China-will-invade-Taiwan" title="GitHub" target="_blank">
+                <svg class="w-6 h-6" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/louiswongca/" title="LinkedIn" target="_blank">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/GunslingerHK/" title="Facebook" target="_blank">
+                <svg class="w-6 h-6" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M14 0H2C.89 0 0 .89 0 2v12c0 1.11.89 2 2 2h7.32V9.75H7.8v-2.3h1.52V5.71c0-1.5 1.05-2.52 2.65-2.52.76 0 1.41.05 1.6.08v2.14h-1.26c-.73 0-.87.35-.87.87v1.83h2.38l-.36 2.3h-2.02V16H14c1.11 0 2-.89 2-2V2c0-1.11-.89-2-2-2z"></path></svg>
+            </a>
+            <a href="https://www.instagram.com/flowerandbayonet/" title="Instagram" target="_blank">
+                <svg class="w-6 h-6" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M8 0C5.82 0 5.54.01 4.67.05 3.8.09 3.25.26 2.7.48 2.14.71 1.64 1 1.2.98.81 1.18.57 1.5.35 2.05.13 2.6.09 3.15.05 4.02.01 4.3 0 5.46 0 8s.01 2.54.05 3.43c.04.87.21 1.42.43 1.97.23.56.54 1.06.98 1.49.43.43.94.75 1.49.98.56.23 1.11.4 1.98.43.87.04 1.15.05 3.43.05s2.54-.01 3.43-.05c.87-.04 1.42-.21 1.97-.43.56-.23 1.06-.54 1.49-.98.43-.43.75-.94.98-1.49.23-.56.4-1.11.43-1.98.04-.87.05-1.15.05-3.43s-.01-2.54-.05-3.43c-.04-.87-.21-1.42-.43-1.97-.23-.56-.54-1.06-.98-1.49-.43-.43-.94-.75-1.49-.98-.56-.23-1.11-.4-1.98-.43C10.54.01 10.26 0 8 0zm0 1.47c2.18 0 2.45.01 3.3.05.81.04 1.25.21 1.54.34.33.16.59.34.8.55.22.21.4.47.55.8.14.29.31.73.34 1.54.04.85.05 1.12.05 3.3s-.01 2.45-.05 3.3c-.04.81-.21 1.25-.34 1.54-.16.33-.34.59-.55.8-.21.21-.47.4-.8.55-.29.14-.73.31-1.54.34-.85.04-1.12.05-3.3.05s-2.45-.01-3.3-.05c-.81-.04-1.25-.21-1.54-.34-.33-.16-.59-.34-.8-.55-.22-.21-.4-.47-.55-.8-.14-.29-.31-.73-.34-1.54-.04-.85-.05-1.12-.05-3.3s.01-2.45.05-3.3c.04-.81.21-1.25.34-1.54.16-.33.34-.59.55-.8.21-.22.47-.4.8-.55.29-.14.73-.31 1.54-.34.85-.04 1.12-.05 3.3-.05zm0 2.53c-2.26 0-4.09 1.83-4.09 4.09s1.83 4.09 4.09 4.09 4.09-1.83 4.09-4.09-1.83-4.09-4.09-4.09zm0 6.64c-1.4 0-2.55-1.14-2.55-2.55s1.14-2.55 2.55-2.55 2.55 1.14 2.55 2.55-1.14 2.55-2.55 2.55zm5.18-7.98c-.54 0-.98-.44-.98-.98s.44-.98.98-.98.98.44.98.98-.44.98-.98.98z"></path></svg>
+            </a>
+        </div>
+        <p>&copy; <span id="currentYear"></span> Louis Wong | All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
