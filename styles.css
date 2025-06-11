@@ -99,16 +99,20 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .tab-button {
-    @apply px-4 py-2 font-medium text-sm rounded-md transition-colors duration-150;
-}
-
-.tab-button.active {
-    @apply bg-blue-600 text-white;
-}
-
-.tab-button:not(.active) {
-    @apply bg-gray-200 text-gray-700 hover:bg-gray-300;
-}
+    @apply px-4 py-2 font-medium text-sm rounded-md !importanttransition-all duration-200 shadow-md;
+    background-color: #f9fafb; /* subtle light gray */
+    color:#3b82f6
+  }
+  
+  .tab-button.active {
+    @apply bg-blue-600 text-white shadow-lg;
+  }
+  
+  .tab-button:not(.active) {
+    @apply text-gray-700 bg-gray-100 hover:bg-gray-200 hover:text-blue-700 hover:shadow-lg;
+  }
+  
+  
 
 .tab-content {
     display: none;
